@@ -1,4 +1,4 @@
-#torch matrix operations
+# torch matrix operations
 - matrix multiplication
 ``` python
   ### Generate some data
@@ -53,7 +53,7 @@ class Network(nn.Module):
 - to access layer weights and bias `fc1.weight` , `fc1.bias` 
 ## activation functions
 - neural networks is a universal function approximators for any problem that could map any input to preferred output. most of the problems solved with a non-linear functions so we introduce non-linearity to the networks by applying activation functions
-![img.png](assets/img_22.png) 
+- ![img.png](assets/img_22.png) 
 
 ### Relu activation function
 
@@ -62,11 +62,11 @@ class Network(nn.Module):
 - Rectified Linear Unit is an activation function used in nearly all modern neural network architectures. It’s defined as max(0, x).
 - At first glance it might look that the function is not that much of a non-linearity, but I will show that you can approximate any function with it.
 - with more than one relu we can approximate any curvature   
-<img src="img_2.png" height="300"  alt="relu2"/>
+<img src="assets/img_2.png" height="300"  alt="relu2"/>
 
 - f(x)=x , relu(x-c) when x<=c it will be equal 0 , when x>c relu of x will be x then g(x)= f(x)+RelU(x-c) will be equal 2x after x>c
 - for more than one element  
-<img src="img_3.png" height="350"  alt="relu3"/>
+<img src="assets/img_3.png" height="350"  alt="relu3"/>
 
 ```python
     from torch import nn
@@ -148,16 +148,16 @@ model = nn.Sequential(OrderedDict([
 ---
 # Autograd in pytorch
 - autograd calculates the derivative for weights by tracking all mathematical operation done to them in a tree
-<img src="img_5.png" height="350"  alt="relu2"/>  
+<img src="assets/img_5.png" height="350"  alt="relu2"/>  
 
 - `e.backward()` calculates derivative of e with respect all independent variables that used to calculate e
   - w1 , w2 , w3  are independent variables , we must set `requires_grad=True` to trace mathematical operations done on the variable
   - `tensor.grad` outputs the grad calculated by e.backward() 
   - note: if recalculate the past operations again and call e.backward() new grads of w1,w2,w3 will be accumulated on the past grads
-    <img src="img_7.png" height="350"  alt="relu2"/>  
+    <img src="assets/img_7.png" height="350"  alt="relu2"/>  
   - so after each forward step we need to clear grads
 - to turn of the track of math operations to calculate grad to make the computations faster if we don't need grad calculation
-   <img src="img_8.png" height="200"  alt="relu2"/>  
+   <img src="assets/img_8.png" height="200"  alt="relu2"/>  
   - you can set requires_grad to all variables to `False` or use with torch.no_grad(): in all operations
 
 
