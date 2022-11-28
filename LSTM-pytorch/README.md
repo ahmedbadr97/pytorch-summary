@@ -58,6 +58,7 @@ n_layers=2
 n_hidden=4
 model=MyModel(input_dim=input_size,n_hidden=n_hidden,n_layers=n_layers)
 ```
+## Feed forward
 ```python
 # generating random input sequence
 rand_x=torch.rand(batch_size*seq_size*input_size).view(batch_size,seq_size,input_size)
